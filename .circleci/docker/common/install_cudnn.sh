@@ -2,8 +2,9 @@
 
 if [[ ${CUDNN_VERSION} == 8 ]]; then
 
+   #libcudnn8-dev_8.2.1.32-1+cuda11.3_amd64.deb
 `   sudo apt-get install -y ssh
-    sudo apt-get update && apt-get install -y --no-install-recommends libcudnn8=8.3.1.22-1+cuda11.5 libcudnn8-dev=8.3.1.22-1+cuda11.5 && apt-mark hold libcudnn8
+    sudo apt-get update && apt-get install -y --no-install-recommends libcudnn8=8.3.2.44-1+cuda11.5 libcudnn8-dev=8.3.2.44-1+cuda11.5 && apt-mark hold libcudnn8
 `
     # cuDNN license: https://developer.nvidia.com/cudnn/license_agreement
     #mkdir tmp_cudnn && cd tmp_cudnn
