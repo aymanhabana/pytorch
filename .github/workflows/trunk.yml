@@ -78,21 +78,21 @@ jobs:
       docker-image-name: pytorch-linux-xenial-cuda10.2-cudnn7-py3-gcc7
       build-generates-artifacts: false
 
-  libtorch-linux-xenial-cuda11_3-py3_7-gcc7-build:
-    name: libtorch-linux-xenial-cuda11.3-py3.7-gcc7
+  libtorch-linux-bionic-cuda11_3-py3_7-gcc7-build:
+    name: libtorch-linux-bionic-cuda11.3-py3.7-gcc7
     uses: pytorch/pytorch/.github/workflows/_linux-build.yml@master
     with:
-      build-environment: libtorch-linux-xenial-cuda11.3-py3.7-gcc7
-      docker-image-name: pytorch-linux-xenial-cuda11.3-cudnn8-py3-gcc7
+      build-environment: libtorch-linux-bionic-cuda11.3-py3.7-gcc7
+      docker-image-name: pytorch-linux-bionic-cuda11.3-cudnn8-py3-gcc7
       build-generates-artifacts: false
 
   # no-ops builds test USE_PER_OPERATOR_HEADERS=0 where ATen/ops is not generated
-  linux-xenial-cuda11_3-py3_7-gcc7-no-ops-build:
-    name: linux-xenial-cuda11.3-py3.7-gcc7-no-ops
+  linux-bionic-cuda11_3-py3_7-gcc7-no-ops-build:
+    name: linux-bionic-cuda11.3-py3.7-gcc7-no-ops
     uses: pytorch/pytorch/.github/workflows/_linux-build.yml@master
     with:
-      build-environment: linux-xenial-cuda11.3-py3.7-gcc7-no-ops
-      docker-image-name: pytorch-linux-xenial-cuda11.3-cudnn8-py3-gcc7
+      build-environment: linux-bionic-cuda11.3-py3.7-gcc7-no-ops
+      docker-image-name: pytorch-linux-bionic-cuda11.3-cudnn8-py3-gcc7
 
   linux-bionic-rocm4_5-py3_7-distributed-build:
     name: linux-bionic-rocm4.5-py3.7-distributed

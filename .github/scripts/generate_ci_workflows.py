@@ -529,8 +529,8 @@ LINUX_WORKFLOWS = [
     ),
     CIWorkflow(
         arch="linux",
-        build_environment="deploy-linux-xenial-cuda11.3-py3.7-gcc7",
-        docker_image_base=f"{DOCKER_REGISTRY}/pytorch/pytorch-linux-xenial-cuda11.3-cudnn8-py3-gcc7",
+        build_environment="deploy-linux-bionic-cuda11.3-py3.7-gcc7",
+        docker_image_base=f"{DOCKER_REGISTRY}/pytorch/pytorch-linux-bionic-cuda11.3-cudnn8-py3-gcc7",
         test_runner_type=LINUX_CUDA_TEST_RUNNER,
         ciflow_config=CIFlowConfig(
             labels={LABEL_CIFLOW_LINUX, LABEL_CIFLOW_CUDA, LABEL_CIFLOW_DEFAULT},
@@ -636,8 +636,8 @@ LINUX_WORKFLOWS = [
     ),
     CIWorkflow(
         arch="linux",
-        build_environment="linux-xenial-cuda11.3-py3.7-gcc7",
-        docker_image_base=f"{DOCKER_REGISTRY}/pytorch/pytorch-linux-xenial-cuda11.3-cudnn8-py3-gcc7",
+        build_environment="linux-bionic-cuda11.3-py3.7-gcc7",
+        docker_image_base=f"{DOCKER_REGISTRY}/pytorch/pytorch-linux-bionic-cuda11.3-cudnn8-py3-gcc7",
         test_runner_type=LINUX_CUDA_TEST_RUNNER,
         num_test_shards=2,
         ciflow_config=CIFlowConfig(
@@ -647,8 +647,8 @@ LINUX_WORKFLOWS = [
     # no-ops builds test USE_PER_OPERATOR_HEADERS=0 where ATen/ops is not generated
     CIWorkflow(
         arch="linux",
-        build_environment="linux-xenial-cuda11.3-py3.7-gcc7-no-ops",
-        docker_image_base=f"{DOCKER_REGISTRY}/pytorch/pytorch-linux-xenial-cuda11.3-cudnn8-py3-gcc7",
+        build_environment="linux-bionic-cuda11.3-py3.7-gcc7-no-ops",
+        docker_image_base=f"{DOCKER_REGISTRY}/pytorch/pytorch-linux-bionic-cuda11.3-cudnn8-py3-gcc7",
         test_runner_type=LINUX_CUDA_TEST_RUNNER,
         exclude_test=True,
         ciflow_config=CIFlowConfig(
@@ -688,8 +688,8 @@ LINUX_WORKFLOWS = [
     ),
     CIWorkflow(
         arch="linux",
-        build_environment="libtorch-linux-xenial-cuda11.3-py3.7-gcc7",
-        docker_image_base=f"{DOCKER_REGISTRY}/pytorch/pytorch-linux-xenial-cuda11.3-cudnn8-py3-gcc7",
+        build_environment="libtorch-linux-bionic-cuda11.3-py3.7-gcc7",
+        docker_image_base=f"{DOCKER_REGISTRY}/pytorch/pytorch-linux-bionic-cuda11.3-cudnn8-py3-gcc7",
         test_runner_type=LINUX_CUDA_TEST_RUNNER,
         build_generates_artifacts=False,
         exclude_test=True,
@@ -699,8 +699,8 @@ LINUX_WORKFLOWS = [
     ),
     CIWorkflow(
         arch="linux",
-        build_environment="periodic-linux-xenial-cuda11.3-py3.7-gcc7-debug",
-        docker_image_base=f"{DOCKER_REGISTRY}/pytorch/pytorch-linux-xenial-cuda11.3-cudnn8-py3-gcc7",
+        build_environment="periodic-linux-bionic-cuda11.3-py3.7-gcc7-debug",
+        docker_image_base=f"{DOCKER_REGISTRY}/pytorch/pytorch-linux-bionic-cuda11.3-cudnn8-py3-gcc7",
         test_runner_type=LINUX_CUDA_TEST_RUNNER,
         num_test_shards=2,
         build_with_debug=True,
@@ -805,8 +805,8 @@ ANDROID_WORKFLOWS = [
 BAZEL_WORKFLOWS = [
     CIWorkflow(
         arch="linux",
-        build_environment="linux-xenial-cuda11.3-py3.7-gcc7-bazel-test",
-        docker_image_base=f"{DOCKER_REGISTRY}/pytorch/pytorch-linux-xenial-cuda11.3-cudnn8-py3-gcc7",
+        build_environment="linux-bionic-cuda11.3-py3.7-gcc7-bazel-test",
+        docker_image_base=f"{DOCKER_REGISTRY}/pytorch/pytorch-linux-bionic-cuda11.3-cudnn8-py3-gcc7",
         test_runner_type=LINUX_CPU_TEST_RUNNER,
         ciflow_config=CIFlowConfig(
             labels={LABEL_CIFLOW_DEFAULT, LABEL_CIFLOW_BAZEL, LABEL_CIFLOW_CPU, LABEL_CIFLOW_LINUX},

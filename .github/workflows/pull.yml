@@ -154,20 +154,20 @@ jobs:
           { config: "default", shard: 1, num_shards: 1, runner: "linux.2xlarge" },
         ]}
 
-  linux-xenial-cuda11_3-py3_7-gcc7-build:
-    name: linux-xenial-cuda11.3-py3.7-gcc7
+  linux-bionic-cuda11_3-py3_7-gcc7-build:
+    name: linux-bionic-cuda11.3-py3.7-gcc7
     uses: pytorch/pytorch/.github/workflows/_linux-build.yml@master
     with:
-      build-environment: linux-xenial-cuda11.3-py3.7-gcc7
-      docker-image-name: pytorch-linux-xenial-cuda11.3-cudnn8-py3-gcc7
+      build-environment: linux-bionic-cuda11.3-py3.7-gcc7
+      docker-image-name: pytorch-linux-bionic-cuda11.3-cudnn8-py3-gcc7
 
-  linux-xenial-cuda11_3-py3_7-gcc7-test:
-    name: linux-xenial-cuda11.3-py3.7-gcc7
+  linux-bionic-cuda11_3-py3_7-gcc7-test:
+    name: linux-bionic-cuda11.3-py3.7-gcc7
     uses: pytorch/pytorch/.github/workflows/_linux-test.yml@master
-    needs: linux-xenial-cuda11_3-py3_7-gcc7-build
+    needs: linux-bionic-cuda11_3-py3_7-gcc7-build
     with:
-      build-environment: linux-xenial-cuda11.3-py3.7-gcc7
-      docker-image: ${{ needs.linux-xenial-cuda11_3-py3_7-gcc7-build.outputs.docker-image }}
+      build-environment: linux-bionic-cuda11.3-py3.7-gcc7
+      docker-image: ${{ needs.linux-bionic-cuda11_3-py3_7-gcc7-build.outputs.docker-image }}
       test-matrix: |
         { include: [
           { config: "default", shard: 1, num_shards: 2, runner: "linux.4xlarge.nvidia.gpu" },
@@ -272,12 +272,12 @@ jobs:
           { config: "force_on_cpu", shard: 1, num_shards: 1, runner: "windows.4xlarge" },
         ]}
 
-  linux-xenial-cuda11_3-py3_7-gcc7-bazel-test:
-    name: linux-xenial-cuda11.3-py3.7-gcc7-bazel-test
+  linux-bionic-cuda11_3-py3_7-gcc7-bazel-test:
+    name: linux-bionic-cuda11.3-py3.7-gcc7-bazel-test
     uses: pytorch/pytorch/.github/workflows/_bazel-build-test.yml@master
     with:
-      build-environment: linux-xenial-cuda11.3-py3.7-gcc7-bazel-test
-      docker-image-name: pytorch-linux-xenial-cuda11.3-cudnn8-py3-gcc7
+      build-environment: linux-bionic-cuda11.3-py3.7-gcc7-bazel-test
+      docker-image-name: pytorch-linux-bionic-cuda11.3-cudnn8-py3-gcc7
 
   pytorch-linux-xenial-py3-clang5-android-ndk-r19c-gradle-custom-build-single:
     name: pytorch-linux-xenial-py3-clang5-android-ndk-r19c-gradle-custom-build-single
@@ -301,20 +301,20 @@ jobs:
       docker-image-name: pytorch-linux-xenial-py3.7-gcc5.4
       build-generates-artifacts: false
 
-  deploy-linux-xenial-cuda11_3-py3_7-gcc7-build:
-    name: deploy-linux-xenial-cuda11.3-py3.7-gcc7
+  deploy-linux-bionic-cuda11_3-py3_7-gcc7-build:
+    name: deploy-linux-bionic-cuda11.3-py3.7-gcc7
     uses: pytorch/pytorch/.github/workflows/_linux-build.yml@master
     with:
-      build-environment: deploy-linux-xenial-cuda11.3-py3.7-gcc7
-      docker-image-name: pytorch-linux-xenial-cuda11.3-cudnn8-py3-gcc7
+      build-environment: deploy-linux-bionic-cuda11.3-py3.7-gcc7
+      docker-image-name: pytorch-linux-bionic-cuda11.3-cudnn8-py3-gcc7
 
-  deploy-linux-xenial-cuda11_3-py3_7-gcc7-test:
-    name: linux-xenial-cuda11.3-py3.7-gcc7
+  deploy-linux-bionic-cuda11_3-py3_7-gcc7-test:
+    name: linux-bionic-cuda11.3-py3.7-gcc7
     uses: pytorch/pytorch/.github/workflows/_linux-test.yml@master
-    needs: deploy-linux-xenial-cuda11_3-py3_7-gcc7-build
+    needs: deploy-linux-bionic-cuda11_3-py3_7-gcc7-build
     with:
-      build-environment: deploy-linux-xenial-cuda11.3-py3.7-gcc7
-      docker-image: ${{ needs.deploy-linux-xenial-cuda11_3-py3_7-gcc7-build.outputs.docker-image }}
+      build-environment: deploy-linux-bionic-cuda11.3-py3.7-gcc7
+      docker-image: ${{ needs.deploy-linux-bionic-cuda11_3-py3_7-gcc7-build.outputs.docker-image }}
       test-matrix: |
         { include: [
           { config: "deploy", shard: 1, num_shards: 1, runner: "linux.4xlarge.nvidia.gpu" },
