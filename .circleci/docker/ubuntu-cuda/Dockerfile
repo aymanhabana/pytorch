@@ -98,7 +98,7 @@ ENV CUDA_PATH /usr/local/cuda
 # Install LLVM dev version (Defined in the pytorch/builder github repository)
 COPY --from=pytorch/llvm:9.0.1 /opt/llvm /opt/llvm
 
-# Install CUDNN 8
+# Install CUDNN
 ARG CUDNN_VERSION
 ADD ./common/install_cudnn.sh install_cudnn.sh
 RUN if [ "${CUDNN_VERSION}" -eq 8 ]; then bash install_cudnn.sh; fi
